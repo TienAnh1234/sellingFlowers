@@ -1,0 +1,34 @@
+<!-- src/app/cart/cart.component.html -->
+
+<div class="container mt-5">
+
+  <div class="row g-4 mb-4 ">
+      <h1>Giỏ Hàng</h1>
+      
+      <div *ngIf="cartItems.length === 0" class="empty-cart">
+        <p>Giỏ hàng của bạn hiện tại trống!</p>
+      </div>
+    
+      <div *ngFor="let item of cartItems" class="col-md-3">
+
+        <div class="card h-100">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" class="product-image" >
+          <div class="product-details">
+            <p>{{ item.name }}</p>
+            <p>{{ item.price }} $</p>
+            <p>{{ item.quantity }}</p>
+
+          </div>
+        </div>
+
+      </div>
+  </div>    
+</div>
+  
+    <!-- <div class="cart-summary">
+      <p>Tổng số sản phẩm: <span>{{ totalItems }}</span></p>
+      <p>Tổng tiền: <span>{{ totalPrice }} VND</span></p>
+      <button (click)="checkout()">Thanh toán</button>
+    </div>
+  </div> -->
+  
